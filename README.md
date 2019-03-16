@@ -8,7 +8,7 @@ Setup the project using following steps:
 
 ```
 git clone https://github.com/abhishekkumar2718/Digital-Hackathon.git
-cd hackathon
+cd Digital-Hackathon
 bundle install
 rails db:create
 rails db:migrate
