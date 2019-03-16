@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'event#index'
   resources :elections
   resources :candidates
   resources :users
