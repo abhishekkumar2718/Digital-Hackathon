@@ -9566,3 +9566,147 @@ puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
 puma (3.12.0) lib/puma/server.rb:472:in `process_client'
 puma (3.12.0) lib/puma/server.rb:332:in `block in run'
 puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/candidates/1" for 127.0.0.1 at 2019-03-16 19:58:13 +0530
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/krishna/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Processing by CandidatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCandidate Load (0.2ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+  [1m[36mCandidateDetail Load (0.1ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  Rendering candidates/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/candidates/show.html.erb:14
+  [1m[36mUserDetail Load (0.1ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  Rendered candidates/show.html.erb within layouts/application (27.4ms)
+Completed 200 OK in 306ms (Views: 266.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:58:13 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.2ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/img/logo.png" for 127.0.0.1 at 2019-03-16 19:58:14 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/candidates/img/logo.png"):
+  
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:58:14 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.2ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 5ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/1" for 127.0.0.1 at 2019-03-16 19:58:53 +0530
+Processing by CandidatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCandidate Load (0.4ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+  [1m[36mCandidateDetail Load (0.3ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  Rendering candidates/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/candidates/show.html.erb:14
+  [1m[36mUserDetail Load (1.1ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  Rendered candidates/show.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 58ms (Views: 35.8ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:58:53 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.1ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/img/logo.png" for 127.0.0.1 at 2019-03-16 19:58:53 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/candidates/img/logo.png"):
+  
+actionpack (5.2.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:58:53 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.1ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 7ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
