@@ -1,21 +1,16 @@
-<%= form_with(model: user, local: true) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<% if user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-      <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :username %>
-    <%= form.text_field :username %>
+    <ul>
+    <% user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
   </div>
+<% end %>
 
+<%= form_with(model: user, local: true) do |form| %>
   <div class="field">
     <%= form.label :password %>
     <%= form.password_field :password %>
@@ -26,12 +21,48 @@
     <%= form.password_field :password_confirmation %>
   </div>
 
+  <div class="actions">
+    <%= form.submit "Update Password" %>
+  </div>
+<% end %>
+
+<%= form_with(model: user, local: true) do |form| %>
   <div class="field">
-    <%= form.label :admin %>
-    <%= form.check_box :admin %>
+    <%= form.label :name %>
+    <%= form.text_field :name, value: @user.name if @user.name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gender %>
+    <%= form.text_field :gender, value: @user.gender if @user.gender %>
+  </div>
+
+  <div class="field">
+    <%= form.label :branch %>
+    <%= form.text_field :branch, value: @user.branch if @user.branch %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.text_field :year, value: @user.year if @user.year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :roll_number %>
+    <%= form.text_field :roll_number, value: @user.roll_number if @user.roll_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :course %>
+    <%= form.text_field :course, value: @user.course if @user.course %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address, value: @user.address if @user.address %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Update Details" %>
   </div>
 <% end %>
