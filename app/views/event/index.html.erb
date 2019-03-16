@@ -1,10 +1,114 @@
-<% if current_user %>
-  Logged in as <%= current_user.email %>.
-  <%= link_to “Log Out”, logout_path %>
-<% else %>
-  <%= link_to “Sign Up”, signup_path %> or 
-  <%= link_to “Log In”, login_path %>
-<% end %>
-<p id=”notice”><%= notice %></p>
-<h1>Welcome</h1>
-<p>NITK online voting system</p>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Complete Bootstrap 4 Website Layout</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<link href="style.css" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- Navigation -->
+
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+            <!--<div class="navbar-header"> -->
+						<a class = "navbar-brand" href="#"> <img src="img/logo.png" alt="logo"> </a>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarResponsive">
+                        <span class="navbar-toggler-icon"></span>
+											</button>
+                    <!--<a class="navbar-brand" href="#" <img src="https://en.wikipedia.org/wiki/National_Institute_of_Technology_Karnataka#/media/File:NITK_Emblem.png" alt="Mountain"> </a>-->
+
+
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ml-auto">
+													<li class="nav-item active">
+														<a class="nav-link" href="#">Home</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link" href="#">Elections</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link" href="#">Candidates</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link" href="#">Admin</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link" href="#">About Us</a>
+													</li>
+
+
+                        </ul>
+             </div>
+        </div>
+			</div>
+</nav>
+<!-- CONTAINERS -->
+<!-- container puts padding around itself while container-fluid fills the whole screen. Bootstap grids require a container. -->
+<div class="container">
+
+<!-- page-header adds space aroundtext and enlarges it. It also adds an underline at the end -->
+<div class="page-header">
+<h1>Live Updates</h1>
+</div>
+
+<!-- jumbotron enlarges fonts and puts everything in a gray box with rounded corners. If jumbotron is outside a container it fills the total width. You can change the styles by placing the changes after the Bootstrap CDN link -->
+<div class="jumbotron">
+<p>Welcome to the Live updates! This time, we provide real-time analysis of the votes etc.</p>
+<ul>
+ <li>Alex is leading John by 200 votes for the post of General Secretary</li>
+ <li>Ram is leading Sham by 123 votes for the post of Sports Secretary</li>
+ <li>Anand is leading Ranjendra by 25 votes for the post of Student council</li>
+</ul>
+<a href="#">Click here to know more!</a>
+</div>
+
+</div>
+<!--- Image Slider -->
+
+
+<!--- Jumbotron -->
+
+
+<!--- Welcome Section -->
+
+
+<!--- Three Column Section -->
+
+
+<!--- Two Column Section -->
+
+
+<!--- Fixed background -->
+
+
+<!--- Emoji Section -->
+
+
+<!--- Meet the team -->
+
+
+<!--- Cards -->
+
+
+<!--- Two Column Section -->
+
+
+<!--- Connect -->
+
+
+<!--- Footer -->
+
+
+
+
+</body>
+</html>
