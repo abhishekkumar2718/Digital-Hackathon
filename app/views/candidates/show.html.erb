@@ -1,14 +1,78 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Affiliation:</strong>
-  <%= @candidate.affiliation %>
-</p>
+<!--
+<div class = "container"
+  <p id="notice"><%= notice %></p>
+  <p>
+    <strong>Affiliation:</strong>
+    <%= @candidate.affiliation %>
+  </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @candidate.user %>
-</p>
 
-<%= link_to 'Edit', edit_candidate_path(@candidate) %> |
-<%= link_to 'Back', candidates_path %>
+
+  <p>
+    <strong>Candidate Email:</strong>
+    <%= @candidate.user.email %>
+  </p>
+  <p>
+    <strong>Candidate Gender:</strong>
+    <%= @candidate.user.gender %>
+  </p>
+  <p>
+    <strong>Candidate Branch:</strong>
+    <%= @candidate.user.branch %>
+  </p>
+  <p>
+    <strong>Candidate Course:</strong>
+    <%= @candidate.user.course %>
+  </p>
+
+  <p>
+    <strong>CGPA:</strong>
+    <%= @candidate.cgpa %>
+  </p>
+  <p>
+    <strong>Past Experience:</strong>
+    <%= @candidate.experience %>
+  </p>
+
+  <p>
+    <strong>About Me:</strong>
+    <%= @candidate.about_me %>
+  </p>
+<div class="btn btn-default">
+  <%= link_to 'Back', candidates_path, :class => "btn" %>
+
+</div>
+</div> -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2 col-md-2">
+            <img src="http://thetransformedmale.files.wordpress.com/2011/06/bruce-wayne-armani.jpg"
+            alt="" class="img-rounded img-responsive" />
+        </div>
+        <div class="col-sm-4 col-md-4">
+            <blockquote>
+              <%= @candidate.user.name %><small><cite title="Source Title">NITK,Surathkal <i class="glyphicon glyphicon-map-marker"></i></cite></small>
+            </blockquote>
+            <p> <i class="glyphicon glyphicon-envelope"></i>       <%= @candidate.affiliation %> <br>
+  <%= @candidate.user.email %> <br>    <%= @candidate.user.branch %> <br>
+            <strong>Candidate Gender:</strong>
+
+              <%= @candidate.user.gender %>    <br>
+               <%= @candidate.user.course %>  <br>
+               <strong>CGPA:</strong>
+               <%= @candidate.cgpa %>    <br>
+               <strong>Past Experience:</strong>
+               <%= @candidate.experience %> <br>
+               <strong>About Me:</strong>
+               <%= @candidate.about_me %> <br>
+
+        </div>
+
+
+    </div>
+</div>
+<div class="btn btn-default">
+  <%= link_to 'Back', candidates_path, :class => "btn" %>
+
+</div>
