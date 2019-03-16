@@ -11,9 +11,12 @@
 </p>
 
 <p>
-  <strong>Date of election:</strong>
-  <%= @election.date_of_election %>
+  <strong>Deadline:</strong>
+  <%= @election.deadline.strftime("%H:%M %F") %>
 </p>
+
+<p>
+  <strong>
 
 <p>
   <strong>Session:</strong>
@@ -21,9 +24,27 @@
 </p>
 
 <p>
-  <strong>Candidate:</strong>
-  <%= @election.candidate %>
+  <strong>Candidates:</string>
+    <% if @election.in_progress? and @current_user %>
+        <%= form_with url:  do |f| %>
+        <table>
+          <tr></tr>
+          <tr></tr>
+          <% @election.candidates.each do |candidate| %>
+            <td>
+            <%= link_to "#{candidate.user.name}", candidate %> 
+            </td>
+            <td>
+              <%= f.submit "Vote", data: candidate.id %>
+            </td>
+          <% end %>
+        </table>
+    <% else %>
+      <% if @election.in_progress? %>
+        <p><strong>Please log in to vote.</strong></p>
+      <% end %>
+      <% @election.candidates.each do |candidate| %>
+        <%= link_to "#{candidate.user.name}", candidate %><br>
+        <% end %>
+    <% end %>
 </p>
-
-<%= link_to 'Edit', edit_election_path(@election) %> |
-<%= link_to 'Back', elections_path %>

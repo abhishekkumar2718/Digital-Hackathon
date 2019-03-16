@@ -2,6 +2,7 @@ class Election < ApplicationRecord
   belongs_to :candidate, optional: true
 
   has_one :vote_chain
+  has_many :nominations
   has_many :candidates, through: :nominations
 
   after_create do
@@ -15,5 +16,9 @@ class Election < ApplicationRecord
 
   def add_candidate(candidate)
     Nomination.create(election: self, candidate: candidate)
+  end
+
+  def in_progess?
+    Time.now.between?(election_start, election_end)
   end
 end

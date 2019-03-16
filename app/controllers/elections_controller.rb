@@ -10,6 +10,10 @@ class ElectionsController < ApplicationController
   # GET /elections/1
   # GET /elections/1.json
   def show
+    if request.post?
+      candidate = Candidate.find(params[:commit])
+      @election.add_vote(@current_user, candidate)
+    end
   end
 
   # GET /elections/new
