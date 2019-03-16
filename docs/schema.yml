@@ -51,6 +51,7 @@ Models:
     - data -> int
     - hash -> text
     - belongs_to vote_chain
+    - belongs_to user
     <%# Add more details relevant to block chain %>
   - Election::Event: -> Model
     - content -> text
