@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  prev_hash: MyString
+  data: 1
+  curr_hash: MyString
+  vote_chain: one
+
+two:
+  prev_hash: MyString
+  data: 1
+  curr_hash: MyString
+  vote_chain: two

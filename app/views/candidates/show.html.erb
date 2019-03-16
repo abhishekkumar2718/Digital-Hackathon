@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Affiliation:</strong>
+  <%= @candidate.affiliation %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @candidate.user %>
+</p>
+
+<%= link_to 'Edit', edit_candidate_path(@candidate) %> |
+<%= link_to 'Back', candidates_path %>

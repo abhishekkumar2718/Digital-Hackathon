@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cgpa: 9.99
+  experience: MyText
+  about_me: MyText
+  candidate: one
+
+two:
+  cgpa: 9.99
+  experience: MyText
+  about_me: MyText
+  candidate: two
