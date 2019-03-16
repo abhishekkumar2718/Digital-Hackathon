@@ -15,7 +15,7 @@ Models:
     - Section -> string
     - Email -> string
     - Avatar -> file
-    - Residence? -> bool
+    - Hosteller? -> bool
     - Block -> string
     - Opt-in? -> bool
     - belongs_to user
@@ -27,7 +27,7 @@ Models:
     - has_many elections, through nominations
   - Election::CandidateDetail: -> Model
     - CGPA -> decimal
-    - Past Experiences -> string
+    - Experiences -> string
     - Manifesto -> file
     - About Me -> text
     - belongs_to candidate
