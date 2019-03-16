@@ -4,4 +4,10 @@ class User < ApplicationRecord
   has_one :user_detail
   has_one :candidate
   has_many :votes
+
+  delegate *UserDetail::ATTR_METHODS, to: :user_detail
+
+  after_initialize do
+    self.build_user_detail if user_detail.nil?
+  end
 end
