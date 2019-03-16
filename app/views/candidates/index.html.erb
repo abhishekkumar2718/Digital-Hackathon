@@ -12,18 +12,25 @@
   </thead>
 
   <tbody>
+
     <% @candidates.each do |candidate| %>
       <tr>
         <td><%= candidate.affiliation %></td>
-        <td><%= candidate.user %></td>
-        <td><%= link_to 'Show', candidate %></td>
-        <td><%= link_to 'Edit', edit_candidate_path(candidate) %></td>
-        <td><%= link_to 'Destroy', candidate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= candidate.user.name %></td>
+        <div class="btn btn-default">
+          <td><%= link_to 'Show', candidate, :class => "btn" %></td>
+          <td><%= link_to 'Edit', edit_candidate_path(candidate), :class => "btn" %></td>
+            <td><%= link_to 'Destroy', candidate, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn"  %></td>
+        </div>
+
+      
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+<div class="btn btn-warning">
+  <%= link_to 'New Candidate', new_candidate_path, :class => "btn" %>
 
-<%= link_to 'New Candidate', new_candidate_path %>
+</div>
