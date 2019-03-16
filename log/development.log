@@ -7695,3 +7695,954 @@ Processing by CandidatesController#show as HTML
 Completed 200 OK in 50ms (Views: 42.2ms | ActiveRecord: 1.3ms)
 
 
+Started GET "/candidates/1" for 127.0.0.1 at 2019-03-16 19:19:31 +0530
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/krishna/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Processing by CandidatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCandidate Load (0.4ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+  [1m[36mCandidateDetail Load (0.1ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  Rendering candidates/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/candidates/show.html.erb:14
+  [1m[36mUserDetail Load (0.1ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  Rendered candidates/show.html.erb within layouts/application (27.1ms)
+Completed 200 OK in 242ms (Views: 205.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:19:31 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.2ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:19:32 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.1ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/" for 127.0.0.1 at 2019-03-16 19:19:39 +0530
+Processing by CandidatesController#index as HTML
+  Rendering candidates/index.html.erb within layouts/application
+  [1m[36mCandidate Load (0.1ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates"[0m
+  ↳ app/views/candidates/index.html.erb:16
+  [1m[36mCandidateDetail Load (0.1ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  [1m[36mCandidateDetail Load (0.1ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 2], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/candidates/index.html.erb:19
+  [1m[36mUserDetail Load (0.1ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/candidates/index.html.erb:19
+  [1m[36mUserDetail Load (0.1ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  Rendered candidates/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:19:39 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.1ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/1" for 127.0.0.1 at 2019-03-16 19:19:41 +0530
+Processing by CandidatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCandidate Load (0.2ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+  [1m[36mCandidateDetail Load (0.1ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  Rendering candidates/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/candidates/show.html.erb:14
+  [1m[36mUserDetail Load (0.1ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  Rendered candidates/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 24ms (Views: 20.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/candidates/2" for 127.0.0.1 at 2019-03-16 19:19:51 +0530
+Processing by CandidatesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCandidate Load (0.5ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+  [1m[36mCandidateDetail Load (0.2ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 2], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  Rendering candidates/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/candidates/show.html.erb:14
+  [1m[36mUserDetail Load (0.1ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  Rendered candidates/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 49ms (Views: 42.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/candidates/" for 127.0.0.1 at 2019-03-16 19:21:59 +0530
+Processing by CandidatesController#index as HTML
+  Rendering candidates/index.html.erb within layouts/application
+  [1m[36mCandidate Load (0.3ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates"[0m
+  ↳ app/views/candidates/index.html.erb:16
+  [1m[36mCandidateDetail Load (0.2ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  [1m[36mCandidateDetail Load (0.2ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 2], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/candidates/index.html.erb:19
+  [1m[36mUserDetail Load (0.2ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/candidates/index.html.erb:19
+  [1m[36mUserDetail Load (0.2ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  Rendered candidates/index.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 46ms (Views: 42.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:21:59 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.1ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:21:59 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.3ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/1" for 127.0.0.1 at 2019-03-16 19:22:00 +0530
+Processing by CandidatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCandidate Load (0.3ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+  [1m[36mCandidateDetail Load (0.2ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  Rendering candidates/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/candidates/show.html.erb:14
+  [1m[36mUserDetail Load (0.2ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  Rendered candidates/show.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 24ms (Views: 19.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/candidates/" for 127.0.0.1 at 2019-03-16 19:30:22 +0530
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/krishna/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2.1/lib/active_record/log_subscriber.rb:98
+Processing by CandidatesController#index as HTML
+  Rendering candidates/index.html.erb within layouts/application
+  [1m[36mCandidate Load (0.1ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates"[0m
+  ↳ app/views/candidates/index.html.erb:16
+  [1m[36mCandidateDetail Load (0.1ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  [1m[36mCandidateDetail Load (0.1ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 2], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/candidates/index.html.erb:19
+  [1m[36mUserDetail Load (0.1ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/candidates/index.html.erb:19
+  [1m[36mUserDetail Load (0.1ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  Rendered candidates/index.html.erb within layouts/application (57.3ms)
+Completed 200 OK in 245ms (Views: 232.9ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:30:22 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.1ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:30:24 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.1ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/1" for 127.0.0.1 at 2019-03-16 19:30:27 +0530
+Processing by CandidatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCandidate Load (0.2ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+  [1m[36mCandidateDetail Load (0.3ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  Rendering candidates/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/candidates/show.html.erb:14
+  [1m[36mUserDetail Load (0.2ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  Rendered candidates/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 38ms (Views: 32.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/candidates/1" for 127.0.0.1 at 2019-03-16 19:31:32 +0530
+Processing by CandidatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCandidate Load (0.3ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+  [1m[36mCandidateDetail Load (0.3ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  Rendering candidates/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/candidates/show.html.erb:14
+  [1m[36mUserDetail Load (0.1ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  Rendered candidates/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 41ms (Views: 34.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:31:32 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.2ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:31:33 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.2ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/1" for 127.0.0.1 at 2019-03-16 19:32:09 +0530
+Processing by CandidatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCandidate Load (0.3ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+  [1m[36mCandidateDetail Load (0.1ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  Rendering candidates/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/candidates/show.html.erb:14
+  [1m[36mUserDetail Load (0.1ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  Rendered candidates/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 20ms (Views: 16.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:32:10 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.2ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:32:10 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.1ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/1" for 127.0.0.1 at 2019-03-16 19:32:17 +0530
+Processing by CandidatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCandidate Load (0.1ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+  [1m[36mCandidateDetail Load (0.1ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  Rendering candidates/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/candidates/show.html.erb:14
+  [1m[36mUserDetail Load (0.1ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  Rendered candidates/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 37ms (Views: 33.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:32:17 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.1ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:32:18 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.1ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/1" for 127.0.0.1 at 2019-03-16 19:32:38 +0530
+Processing by CandidatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCandidate Load (0.2ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+  [1m[36mCandidateDetail Load (0.1ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  Rendering candidates/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/candidates/show.html.erb:14
+  [1m[36mUserDetail Load (0.1ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  Rendered candidates/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 19ms (Views: 15.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:32:38 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.1ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:32:39 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.1ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/1" for 127.0.0.1 at 2019-03-16 19:32:50 +0530
+Processing by CandidatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCandidate Load (0.3ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+  [1m[36mCandidateDetail Load (0.3ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  Rendering candidates/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/candidates/show.html.erb:14
+  [1m[36mUserDetail Load (0.3ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  Rendered candidates/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 41ms (Views: 32.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:32:51 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.1ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:32:51 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.1ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/1" for 127.0.0.1 at 2019-03-16 19:34:09 +0530
+Processing by CandidatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCandidate Load (0.2ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+  [1m[36mCandidateDetail Load (0.2ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  Rendering candidates/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/candidates/show.html.erb:14
+  [1m[36mUserDetail Load (0.2ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  Rendered candidates/show.html.erb within layouts/application (15.9ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `uder' for #<Candidate:0x00007f00ec082340>
+Did you mean?  user):
+    54:             <blockquote>
+    55:               <%= @candidate.user.name %><small><cite title="Source Title">NITK,Surathkal <i class="glyphicon glyphicon-map-marker"></i></cite></small>
+    56:             </blockquote>
+    57:             <p> <i class="glyphicon glyphicon-envelope"></i>     <%= @candidate.user.email %>     <%= @candidate.uder.branch %>
+    58:               <%= @candidate.user.gender %>
+    59: 
+    60: 
+  
+app/views/candidates/show.html.erb:57:in `_app_views_candidates_show_html_erb__2957594581090470369_69820968375360'
+Started GET "/candidates/1" for 127.0.0.1 at 2019-03-16 19:34:26 +0530
+Processing by CandidatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCandidate Load (0.2ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+  [1m[36mCandidateDetail Load (0.2ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  Rendering candidates/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/candidates/show.html.erb:14
+  [1m[36mUserDetail Load (0.2ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  Rendered candidates/show.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 45ms (Views: 39.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:34:26 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.1ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:34:27 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.1ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/1" for 127.0.0.1 at 2019-03-16 19:34:41 +0530
+Processing by CandidatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCandidate Load (0.3ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+  [1m[36mCandidateDetail Load (0.1ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  Rendering candidates/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/candidates/show.html.erb:14
+  [1m[36mUserDetail Load (0.1ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  Rendered candidates/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 15.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:34:41 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.1ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:34:45 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.2ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/1" for 127.0.0.1 at 2019-03-16 19:37:08 +0530
+Processing by CandidatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCandidate Load (0.2ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+  [1m[36mCandidateDetail Load (0.2ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  Rendering candidates/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/candidates/show.html.erb:14
+  [1m[36mUserDetail Load (0.2ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  Rendered candidates/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 45ms (Views: 39.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:37:08 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.1ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:37:14 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.2ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates" for 127.0.0.1 at 2019-03-16 19:37:27 +0530
+Processing by CandidatesController#index as HTML
+  Rendering candidates/index.html.erb within layouts/application
+  [1m[36mCandidate Load (0.2ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates"[0m
+  ↳ app/views/candidates/index.html.erb:16
+  [1m[36mCandidateDetail Load (0.1ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  [1m[36mCandidateDetail Load (0.1ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 2], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/candidates/index.html.erb:19
+  [1m[36mUserDetail Load (0.1ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/candidates/index.html.erb:19
+  [1m[36mUserDetail Load (0.1ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  Rendered candidates/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 48ms (Views: 45.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/candidates/1" for 127.0.0.1 at 2019-03-16 19:37:29 +0530
+Processing by CandidatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCandidate Load (0.3ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+  [1m[36mCandidateDetail Load (0.2ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  Rendering candidates/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/candidates/show.html.erb:14
+  [1m[36mUserDetail Load (0.2ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  Rendered candidates/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 38ms (Views: 32.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/candidates/1" for 127.0.0.1 at 2019-03-16 19:38:02 +0530
+Processing by CandidatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCandidate Load (0.2ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+  [1m[36mCandidateDetail Load (0.1ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  Rendering candidates/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/candidates/show.html.erb:14
+  [1m[36mUserDetail Load (0.1ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  Rendered candidates/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 19ms (Views: 16.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:38:02 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.2ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 4ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:38:02 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.1ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/1" for 127.0.0.1 at 2019-03-16 19:38:24 +0530
+Processing by CandidatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCandidate Load (0.5ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+  [1m[36mCandidateDetail Load (0.4ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  Rendering candidates/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/candidates/show.html.erb:14
+  [1m[36mUserDetail Load (0.2ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  Rendered candidates/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 31ms (Views: 23.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:38:24 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.1ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:38:24 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.2ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/1" for 127.0.0.1 at 2019-03-16 19:38:40 +0530
+Processing by CandidatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCandidate Load (0.3ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+  [1m[36mCandidateDetail Load (0.1ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  Rendering candidates/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/candidates/show.html.erb:14
+  [1m[36mUserDetail Load (0.1ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  Rendered candidates/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 19ms (Views: 15.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:38:41 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.1ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:38:41 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.1ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/1" for 127.0.0.1 at 2019-03-16 19:39:08 +0530
+Processing by CandidatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCandidate Load (0.4ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+  [1m[36mCandidateDetail Load (0.1ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  Rendering candidates/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/candidates/show.html.erb:14
+  [1m[36mUserDetail Load (0.1ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  Rendered candidates/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 20ms (Views: 15.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:39:08 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.2ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:39:09 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.1ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/1" for 127.0.0.1 at 2019-03-16 19:39:32 +0530
+Processing by CandidatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCandidate Load (0.1ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+  [1m[36mCandidateDetail Load (0.1ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  Rendering candidates/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/candidates/show.html.erb:14
+  [1m[36mUserDetail Load (0.1ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  Rendered candidates/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:39:32 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.1ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:39:32 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.1ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/1" for 127.0.0.1 at 2019-03-16 19:39:56 +0530
+Processing by CandidatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCandidate Load (0.1ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+  [1m[36mCandidateDetail Load (0.1ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  Rendering candidates/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/candidates/show.html.erb:14
+  [1m[36mUserDetail Load (0.1ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  Rendered candidates/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:39:56 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.1ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates/style.css" for 127.0.0.1 at 2019-03-16 19:39:56 +0530
+Processing by CandidatesController#show as CSS
+  Parameters: {"id"=>"style"}
+  [1m[36mCandidate Load (0.1ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Candidate with 'id'=style):
+  
+app/controllers/candidates_controller.rb:67:in `set_candidate'
+Started GET "/candidates" for 127.0.0.1 at 2019-03-16 19:39:59 +0530
+Processing by CandidatesController#index as HTML
+  Rendering candidates/index.html.erb within layouts/application
+  [1m[36mCandidate Load (0.3ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates"[0m
+  ↳ app/views/candidates/index.html.erb:16
+  [1m[36mCandidateDetail Load (0.1ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  [1m[36mCandidateDetail Load (0.1ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 2], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/candidates/index.html.erb:19
+  [1m[36mUserDetail Load (0.2ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/candidates/index.html.erb:19
+  [1m[36mUserDetail Load (0.1ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  Rendered candidates/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 36ms (Views: 33.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/candidates/2" for 127.0.0.1 at 2019-03-16 19:40:00 +0530
+Processing by CandidatesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCandidate Load (0.4ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+  [1m[36mCandidateDetail Load (0.2ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 2], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  Rendering candidates/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/candidates/show.html.erb:14
+  [1m[36mUserDetail Load (0.1ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  Rendered candidates/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 35ms (Views: 28.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/candidates" for 127.0.0.1 at 2019-03-16 19:40:04 +0530
+Processing by CandidatesController#index as HTML
+  Rendering candidates/index.html.erb within layouts/application
+  [1m[36mCandidate Load (0.4ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates"[0m
+  ↳ app/views/candidates/index.html.erb:16
+  [1m[36mCandidateDetail Load (0.2ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  [1m[36mCandidateDetail Load (0.2ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 2], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/candidates/index.html.erb:19
+  [1m[36mUserDetail Load (0.1ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/candidates/index.html.erb:19
+  [1m[36mUserDetail Load (0.1ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  Rendered candidates/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 41ms (Views: 38.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/candidates/1" for 127.0.0.1 at 2019-03-16 19:40:08 +0530
+Processing by CandidatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCandidate Load (0.3ms)[0m  [1m[34mSELECT  "candidates".* FROM "candidates" WHERE "candidates"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/candidates_controller.rb:67
+  [1m[36mCandidateDetail Load (0.2ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  Rendering candidates/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/candidates/show.html.erb:14
+  [1m[36mUserDetail Load (0.2ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  Rendered candidates/show.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 46ms (Views: 41.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/candidates" for 127.0.0.1 at 2019-03-16 19:40:19 +0530
+Processing by CandidatesController#index as HTML
+  Rendering candidates/index.html.erb within layouts/application
+  [1m[36mCandidate Load (0.4ms)[0m  [1m[34mSELECT "candidates".* FROM "candidates"[0m
+  ↳ app/views/candidates/index.html.erb:16
+  [1m[36mCandidateDetail Load (0.4ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 1], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  [1m[36mCandidateDetail Load (0.2ms)[0m  [1m[34mSELECT  "candidate_details".* FROM "candidate_details" WHERE "candidate_details"."candidate_id" = ? LIMIT ?[0m  [["candidate_id", 2], ["LIMIT", 1]]
+  ↳ app/models/candidate.rb:9
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/candidates/index.html.erb:19
+  [1m[36mUserDetail Load (0.2ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/candidates/index.html.erb:19
+  [1m[36mUserDetail Load (0.2ms)[0m  [1m[34mSELECT  "user_details".* FROM "user_details" WHERE "user_details"."user_id" = ? LIMIT ?[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  Rendered candidates/index.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 50ms (Views: 47.0ms | ActiveRecord: 1.7ms)
+
+
