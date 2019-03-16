@@ -1,0 +1,58 @@
+Models:
+  - User::User:
+    - Username -> string
+    - Password -> digest
+    - Email -> string
+    - has_one user_detail
+    - has_many votes
+  - User::UserDetail:
+    - Name -> string
+    - Gender -> string
+    - Branch -> string 
+    - Year -> int
+    - Roll Number -> string
+    - Course -> string
+    - Section -> string
+    - Avatar -> file
+    - Residence? -> bool
+    - Block -> string
+    - Opt-in? -> bool
+    - belongs_to user
+    <%# Add more demographic parameters %>
+  - User::Admin:
+    - Username -> string
+    - Password -> digest
+  - Election::Candidate:
+    - Affiliation -> string
+    - has_one user_detail
+    - has_one candidate_detail
+    - has_many elections, through nominations
+  - Election::CandidateDetail:
+    - CGPA -> decimal
+    - Past Experiences -> string
+    - Manifesto -> file
+    - About Me -> text
+    - belongs_to candidate
+  - Election::Election:
+    - Postion -> string
+    - Deadline -> datetime
+    - date_of_election -> datetime
+    - session -> string 
+    - has_many candidates, through nominations
+    - belongs_to candidate, as winner
+    - has_one vote_chain
+  - Election::Nomination:
+    - belongs_to candidate
+    - belongs_to election
+  - Election::VoteChain:
+    - belongs_to election
+    - vote_count -> text, serialized as array
+    - has_many votes
+  - Election::Vote:
+    - prev_hash -> string
+    - data -> int
+    - hash -> text
+    - belongs_to vote_chain
+    <%# Add more details relevant to block chain %>
+  - Election::Event:
+    - content -> text
