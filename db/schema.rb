@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_16_085608) do
+ActiveRecord::Schema.define(version: 2019_03_16_130038) do
 
   create_table "candidate_details", force: :cascade do |t|
     t.decimal "cgpa"
@@ -33,11 +33,12 @@ ActiveRecord::Schema.define(version: 2019_03_16_085608) do
   create_table "elections", force: :cascade do |t|
     t.string "position"
     t.datetime "deadline"
-    t.datetime "date_of_election"
     t.string "session"
     t.integer "candidate_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "election_start"
+    t.datetime "election_end"
     t.index ["candidate_id"], name: "index_elections_on_candidate_id"
   end
 
