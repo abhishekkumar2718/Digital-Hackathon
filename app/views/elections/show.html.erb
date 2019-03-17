@@ -1,8 +1,9 @@
+<center>
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Position:</strong>
-  <%= @election.position %>
+  <!--<strong>Position:</strong>-->
+<strong><%= @election.position %></strong>
 </p>
 
 <p>
@@ -23,13 +24,13 @@
 <p>
   <strong>Candidates:</string><br>
     <% if @election.in_progress? and @current_user %>
-      <%= form_with(model: election, local: true) do |f| %>
+      <%= form_with(model: @election, local: true) do |f| %>
         <table>
           <tr></tr>
           <tr></tr>
           <% @election.candidates.each do |candidate| %>
             <td>
-            <%= link_to "#{candidate.user.name}", candidate %> 
+            <%= link_to "#{candidate.user.name}", candidate %>
             </td>
             <td>
               <%= f.submit "Vote", data: candidate.id %>
@@ -46,3 +47,4 @@
       <% end %>
     <% end %>
 </p>
+</center>
