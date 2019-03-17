@@ -2,6 +2,9 @@ class VoteChain < ApplicationRecord
   belongs_to :election
   serialize :vote_count, Hash
   has_many :votes
+  has_many :users, through: :votes
+
+  alias_attribute :voters, :users
 
   after_create do 
     votes.create(data: -1)
@@ -9,7 +12,7 @@ class VoteChain < ApplicationRecord
 
   def add_vote(voter, candidate)
     votes.create(data: candidate.id, user: voter, prev_hash: votes.last.hash)
-    Event.create(content: "A vote #{votes.last.hash} has been cast in elections for #{election.position} #{election.session}")
+    Event.create(content: "A vote with hash #{votes.last.hash} has been cast in elections for #{election.position} #{election.session}")
   end
 
   def add_candidate(candidate)

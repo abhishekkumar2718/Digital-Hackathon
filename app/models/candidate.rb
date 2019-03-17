@@ -4,10 +4,12 @@ class Candidate < ApplicationRecord
   has_one :candidate_detail
   has_many :nominations
   has_many :elections, through: :nominations
+
+
   delegate *CandidateDetail::ATTR_METHODS, to: :candidate_detail
 
- after_initialize do
-   self.build_candidate_detail if candidate_detail.nil?
+ after_create do
+   self.create_candidate_detail
  end
 
 end
