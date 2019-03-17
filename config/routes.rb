@@ -1,18 +1,13 @@
 Rails.application.routes.draw do
   root 'event#index'
-  #get 'event/index'
-  #get 'sessions/new'
-  #get 'sessions/create'
-  #get 'sessions/destroy'
   resources :elections
   resources :candidates
-  resources :users
+  post "elections/(:id)", to: "elections#show"
+  get "user/profile", to: 'users#show', as: :user_profile
+  post "user/profile", to: 'users#update'
+  get "register", to: "users#new", as: :register
+  post "register", to: "users#create"
   resources :sessions, only: [:new, :create, :destroy]
-  #get ‘signup’, to: ‘users#new’, as: ‘signup’
-  #get ‘login’, to: ‘sessions#new’, as: ‘login’
-  #get ‘logout’, to: ‘sessions#destroy’, as: ‘logout’
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
-
-
+  get "login", to: "sessions#new", as: :login
+  get "logout", to: "sessions#destroy", as: :logout
 end

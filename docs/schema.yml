@@ -13,7 +13,6 @@ Models:
     - Roll Number -> string
     - Course -> string
     - Section -> string
-    - Email -> string
     - Avatar -> file
     - Residence? -> bool
     - Block -> string

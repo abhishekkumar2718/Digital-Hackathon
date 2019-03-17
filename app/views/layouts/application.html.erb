@@ -16,48 +16,46 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <link href="style.css" rel="stylesheet">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
   </head>
 
   <body>
-  <h1>Welcome to the NITK Online Voting Portal</h1>
+  <h1>NITK Online Voting Portal</h1>
 
     <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
         <div class="container-fluid">
-            <!--<div class="navbar-header"> -->
-						<a class = "navbar-brand" href="#"> <img src="img/logo.png" alt="logo"> </a>
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarResponsive">
-                        <span class="navbar-toggler-icon"></span>
-											</button>
-                    <!--<a class="navbar-brand" href="#" <img src="https://en.wikipedia.org/wiki/National_Institute_of_Technology_Karnataka#/media/File:NITK_Emblem.png" alt="Mountain"> </a>-->
-
-
-                    <div class="collapse navbar-collapse" id="navbarResponsive">
-                        <ul class="navbar-nav ml-auto">
-													<li class="nav-item active">
-														<a class="nav-link" href="">Home</a>
-													</li>
-													<li class="nav-item">
-														<a class="nav-link" href="#">Elections</a>
-													</li>
-													<li class="nav-item">
-														<a class="nav-link" href="candidates">Candidates</a>
-													</li>
-													<li class="nav-item">
-														<a class="nav-link" href="#">Admin</a>
-													</li>
-													<li class="nav-item">
-														<a class="nav-link" href="#">About Us</a>
-													</li>
-
-
-                        </ul>
-             </div>
+            <a class = "navbar-brand" href="#"> <img src="img/logo.png" alt="logo"> </a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarResponsive">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                          <%= link_to "Home", root_path %>
+                        </li>
+                        <li class="nav-item">
+                          <%= link_to "Profile", user_profile_path %>
+                        </li>
+                        <li class="nav-item">
+                          <%= link_to "Elections", elections_path %>
+                        </li>
+                        <li class="nav-item">
+                          <%= link_to "Candidates", candidates_path %>
+                        </li>
+                        <% if @current_user %>
+                          <li class="nav-item">
+                            <%= link_to "Log Out", logout_path  %>
+                          </li>
+                        <% else %>
+                          <li class="nav-item">
+                            <%= link_to "Log In", login_path  %>
+                          </li>
+                        <% end %>
+                  </ul>
+                </div>
         </div>
-			</div>
-</nav>
+    </nav>
 <%= yield %>
   </body>
 </html>
