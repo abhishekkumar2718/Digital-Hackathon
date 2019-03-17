@@ -25,38 +25,38 @@
 
     <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
         <div class="container-fluid">
-            <a class = "navbar-brand" href="#"> <img src="img/logo.png" alt="logo"> </a>
+            <a class = "navbar-brand" href="https://www.nitk.ac.in"> <img src="https://upload.wikimedia.org/wikipedia/en/c/cc/NITK_Emblem.png" alt="logo" width="60" height="70"> </a>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarResponsive">
                   <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                   <div class = "row">
                     <ul class="navbar-nav ml-auto">
-                      <div class = "col-sm-4">
+                      <div class = "col-sm-2">
                         <li class="nav-item">
                           <%= link_to "Home", root_path %>
                         </li>
                       </div>
                         
-                      <div class ="col-sm-4">
+                      <div class ="col-sm-2">
                         <li class="nav-item">
                           <%= link_to "Profile", user_profile_path %>
                         </li>
                       </div>
                         
-                      <div class="col-sm-4">
+                      <div class="col-sm-3">
                         <li class="nav-item">
                           <%= link_to "Elections", elections_path %>
                         </li>
                       </div>
                         
-                      <div class = "col-sm-4">
+                      <div class = "col-sm-3">
                         <li class="nav-item">
                           <%= link_to "Candidates", candidates_path %>
                         </li>
                       </div>
                         
-                      <div class="col-sm-4">
+                      <div class="col-sm-3">
                         <% if @current_user %>
                           <li class="nav-item">
                             <%= link_to "Log Out", logout_path  %>
