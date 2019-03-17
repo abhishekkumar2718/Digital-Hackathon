@@ -22,6 +22,14 @@ class Election < ApplicationRecord
     Time.now.between?(election_start, election_end)
   end
 
+  def over?
+    Time.now > election_end
+  end
+  
+  def started?
+    Time.now < election_start
+  end
+
   def transactions
     file_path = Rails.root.join("public", "transactions", "#{id}.csv")
     if !File.exists? file_path

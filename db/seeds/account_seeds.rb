@@ -23,7 +23,7 @@ puts "Admin account created"
 
 5.times do
   name = Faker::Name.name
-  username = Faker::Internet.username
+  username = Faker::Internet.unique.username
   email = Faker::Internet.email
   passwd = "passwd"
   gender = Faker::Gender.type
@@ -45,7 +45,7 @@ puts "Candidate accounts created"
 100.times do
 
   name = Faker::Name.name
-  username = Faker::Internet.username
+  username = Faker::Internet.unique.username
   email = Faker::Internet.email
   passwd = "passwd"
   gender = Faker::Gender.type

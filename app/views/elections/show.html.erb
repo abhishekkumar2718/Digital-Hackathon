@@ -12,18 +12,22 @@
 </p>
 
 <p>
-  <strong>Election starts:</strong>
-</p>
-
-
-<p>
   <strong>Session:</strong>
   <%= @election.session %>
 </p>
 
+<% if @election.over? %>
+	<p>
+	  <strong>Data:</strong>
+	  <%= link_to "Vote Data", url: "/public/transactions/#{@election.id}.csv" %><br>
+	  <%= link_to "Demographic Data", params.merge({commit: "Demographic Data"}) %><br>
+	  <%= link_to "Candidate Data", params.merge({commit: "Candidate Data"}) %><br>
+	</p>
+<% end %>
+
 <p>
   <strong>Candidates:</string><br>
-    <% if @election.in_progress? and @current_user %>
+    <% if @election.in_progress? and @current_user and !@current_user.admin %>
       <%= form_with(model: @election, local: true) do |f| %>
         <table>
           <tr></tr>
