@@ -4,5 +4,31 @@
   <strong>Username:</strong>
   <%= @user.username %>
 </p>
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>E-Mail:</strong>
+  <%= @user.email %>
+</p>
+<p>
+  <strong>Gender:</strong>
+  <%= @user.gender %>
+</p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @user.branch %>
+</p>
+<p>
+  <strong>Course:</strong>
+  <%= @user.course %>
+</p>
+<p>
+  <strong>Year:</strong>
+  <%= @user.year %>
+</p>
 
 <%= render "form", user: @user %>
