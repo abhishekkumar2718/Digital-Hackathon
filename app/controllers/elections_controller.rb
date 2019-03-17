@@ -11,8 +11,19 @@ class ElectionsController < ApplicationController
   # GET /elections/1.json
   def show
     if request.post?
-      candidate = Candidate.find(params[:commit])
-      @election.add_vote(@current_user, candidate)
+      if params[:commit] == "Transactions"
+        send_file(@election.transactions,
+                  filename: "Transactions_#{@election.id}",
+                  type: "text/csv"
+                 )
+      elsif params[:commit] == "Demographic Data"
+        send_file(@election.demographics,
+                  filename: "Demographics_#{@election.id}",
+                  type: "text/csv"
+                 )
+      elsif params[:commit] == "Candidate Data"
+        candidate = Candidate.find(params[:commit])
+        @election.add_vote(@current_user, params[:candidate])
     end
   end
 

@@ -21,4 +21,53 @@ class Election < ApplicationRecord
   def in_progress?
     Time.now.between?(election_start, election_end)
   end
+
+  def transactions
+    file_path = Rails.root.join("public", "transactions", "#{id}.csv")
+    if !File.exists? file_path
+      attributes = %w{id data created_at updated_at prev_hash}
+      CSV.open(file_path, "w",
+              write_headers: true,
+              headers: attributes) do |csv|
+
+        vote_chain.votes.each do |vote|
+          csv << attributes.map{ |attr| vote.send(attr) }
+        end
+      end
+    end
+    return file_path
+  end
+
+  def demographics
+    file_path = Rails.root.join("public", "demographics", "#{id}.csv")
+    if !File.exists? file_path
+      attributes = %{voted_for gender branch year address}
+      CSV.open(file_path, "w",
+               write_headers: true,
+               headers: attributes) do |csv|
+        vote_chain.votes.each do |vote|
+          voter = vote.voter
+          row = [vote.data, voter.gender, voter.branch, voter.year, voter.address]
+          csv << row
+        end
+      end
+    end
+    return file_path
+  end
+
+  def candidates_csv
+    file_path = Rails.root.join("public", "candidates", "#{id}.csv")
+    if !File.exists? file_path
+      attributes = %{id name}
+      CSV.open(file_path, "w",
+               write_headers: true,
+               headers: attributes) do |csv|
+        candidates.each do |candidate|
+          row = [candidate.id, candidate.user.name]
+          csv << row
+        end
+       end
+    end
+    return file_path
+  end
 end
