@@ -10,4 +10,5 @@ class User < ApplicationRecord
   after_create do
     self.create_user_detail 
   end
+
 end
