@@ -22,7 +22,7 @@ puts "Admin account created"
 # Create candidate accounts
 
 5.times do
-  name = Fake::Name.name
+  name = Faker::Name.name
   username = Faker::Internet.username
   email = Faker::Internet.email
   passwd = "passwd"
