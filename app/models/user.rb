@@ -6,8 +6,8 @@ class User < ApplicationRecord
 
   delegate *UserDetail::ATTR_METHODS, to: :user_detail
 
-
   after_initialize do
     self.build_user_detail if user_detail.nil?
   end
+
 end
