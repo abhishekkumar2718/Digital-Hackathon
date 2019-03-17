@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'event#index'
+  resources :users
   resources :elections
   resources :candidates
   post "elections/(:id)", to: "elections#show"

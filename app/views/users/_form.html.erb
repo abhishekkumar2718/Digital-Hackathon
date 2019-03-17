@@ -11,6 +11,12 @@
 <% end %>
 
 <%= form_with url: user_profile_path do |form| %>
+
+  <div class="field">
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+  </div>
+
   <div class="field">
     <%= form.label :password %>
     <%= form.password_field :password %>
