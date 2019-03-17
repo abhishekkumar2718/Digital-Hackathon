@@ -21,14 +21,14 @@ puts "Admin account created"
 
 # Create candidate accounts
 
-5.times do 
-  name = Faker::Name
+5.times do
+  name = Fake::Name.name
   username = Faker::Internet.username
   email = Faker::Internet.email
   passwd = "passwd"
-  gender = Faker::Gender
+  gender = Faker::Gender.type
   branch = branches.sample
-  address = Faker::Address
+  address = Faker::Address.street_name
   year = rand(4) + 1
   affiliation = parties.sample
 
@@ -44,13 +44,13 @@ puts "Candidate accounts created"
 
 100.times do
 
-  name = Faker::Name
+  name = Faker::Name.name
   username = Faker::Internet.username
   email = Faker::Internet.email
   passwd = "passwd"
-  gender = Faker::Gender
+  gender = Faker::Gender.type
   branch = branches.sample
-  address = Faker::Address
+  address = Faker::Address.street_name
   year = rand(4) + 1
 
   voter = User.create(username: username, password: "passwd", admin: false)
