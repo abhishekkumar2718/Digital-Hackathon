@@ -5,6 +5,11 @@ class UsersController < ApplicationController
   end
 
   def show
+    if @current_user
+      @user = @current_user
+    else
+      redirect_to root_path, error: "Please log in to see profile details"
+    end
   end
 
   # GET /users/new
@@ -52,6 +57,7 @@ class UsersController < ApplicationController
           format.html { render :edit }
           format.json { render json: @user.errors, status: :unprocessable_entity }
         end
+      end
     end
   end
 

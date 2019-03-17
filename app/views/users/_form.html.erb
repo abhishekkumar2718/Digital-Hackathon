@@ -10,7 +10,7 @@
   </div>
 <% end %>
 
-<%= form_with(model: user, local: true) do |form| %>
+<%= form_with url: user_profile_path do |form| %>
   <div class="field">
     <%= form.label :password %>
     <%= form.password_field :password %>
@@ -26,40 +26,40 @@
   </div>
 <% end %>
 
-<%= form_with(model: user, local: true) do |form| %>
+<%= form_with url: user_profile_path do |form| %>
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name, value: @user.name if @user.name %>
+    <%= form.text_field :name, value: "#{user.name if user.name}" %>
   </div>
 
   <div class="field">
     <%= form.label :gender %>
-    <%= form.text_field :gender, value: @user.gender if @user.gender %>
+    <%= form.text_field :gender, value: "#{user.gender if user.gender}" %>
   </div>
 
   <div class="field">
     <%= form.label :branch %>
-    <%= form.text_field :branch, value: @user.branch if @user.branch %>
+    <%= form.text_field :branch, value: "#{user.branch if user.branch}" %>
   </div>
 
   <div class="field">
     <%= form.label :year %>
-    <%= form.text_field :year, value: @user.year if @user.year %>
+    <%= form.text_field :year, value: "#{user.year if user.year}" %>
   </div>
 
   <div class="field">
     <%= form.label :roll_number %>
-    <%= form.text_field :roll_number, value: @user.roll_number if @user.roll_number %>
+    <%= form.text_field :roll_number, value: "#{user.roll_number if user.roll_number}" %>
   </div>
 
   <div class="field">
     <%= form.label :course %>
-    <%= form.text_field :course, value: @user.course if @user.course %>
+    <%= form.text_field :course, value: "#{user.course if user.course}" %>
   </div>
 
   <div class="field">
     <%= form.label :address %>
-    <%= form.text_field :address, value: @user.address if @user.address %>
+    <%= form.text_field :address, value: "#{user.address if user.address}" %>
   </div>
 
   <div class="actions">

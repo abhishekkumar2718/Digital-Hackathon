@@ -18,7 +18,7 @@ class Election < ApplicationRecord
     Nomination.create(election: self, candidate: candidate)
   end
 
-  def in_progess?
+  def in_progress?
     Time.now.between?(election_start, election_end)
   end
 end

@@ -2,9 +2,12 @@ Rails.application.routes.draw do
   root 'event#index'
   resources :elections
   resources :candidates
-  get "user/profile", to: 'user#show', as: :user_profile
-  post "user/profile", to: 'user#update'
-  get "register", to: "user#new", as: :register
-  post "register", to: "user#create"
+  post "elections/(:id)", to: "elections#show"
+  get "user/profile", to: 'users#show', as: :user_profile
+  post "user/profile", to: 'users#update'
+  get "register", to: "users#new", as: :register
+  post "register", to: "users#create"
   resources :sessions, only: [:new, :create, :destroy]
+  get "login", to: "sessions#new", as: :login
+  get "logout", to: "sessions#destroy", as: :logout
 end
